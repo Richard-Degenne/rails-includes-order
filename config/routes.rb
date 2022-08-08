@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :consoles do
     resources :games, shallow: true
   end
+
+  get :export, to: 'exports#export'
 end
