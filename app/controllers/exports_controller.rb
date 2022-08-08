@@ -11,7 +11,7 @@ class ExportsController < ApplicationController
   private
 
   def build_export_data
-    Console.all.map do |console|
+    Console.all.includes(:games).map do |console|
       games_data = console.games.map { |game| game.slice(:title) }
       console.slice(:name).merge(games: games_data)
     end
