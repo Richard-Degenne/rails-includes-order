@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'consoles#index'
 
-  resources :consoles
+  resources :consoles do
+    resources :games, shallow: true
+  end
 end

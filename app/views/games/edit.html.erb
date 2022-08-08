@@ -1,0 +1,10 @@
+<h1>Editing game</h1>
+
+<%= render "form", models: [@game], game: @game %>
+
+<br>
+
+<div>
+  <%= link_to "Show this game", @game %> |
+  <%= link_to "Back to games", console_games_path(@game.console) %>
+</div>

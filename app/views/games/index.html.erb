@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @console.name %> games</h1>
+
+<div id="games">
+  <% @games.each do |game| %>
+    <%= render game %>
+    <p>
+      <%= link_to "Show this game", game %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New game", new_console_game_path(@console) %>
+<%= link_to "Back to console", console_path(@console) %>

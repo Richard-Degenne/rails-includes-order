@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_08_161003) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_08_161347) do
   create_table "consoles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "games", force: :cascade do |t|
+    t.string "title"
+    t.integer "console_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["console_id"], name: "index_games_on_console_id"
+  end
+
+  add_foreign_key "games", "consoles"
 end
